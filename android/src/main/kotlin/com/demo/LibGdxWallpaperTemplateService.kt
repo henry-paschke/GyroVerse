@@ -28,8 +28,7 @@ class LibGdxWallpaperTemplateService : AndroidLiveWallpaperService() {
    }
 
    class MyLiveWallpaperListener : AndroidWallpaperListener, ApplicationListener {
-      private var batch: SpriteBatch? = null
-      private var img: Texture? = null
+      private var scene: WallpaperScene? = null
 
       override fun offsetChange(
          xOffset: Float,
@@ -51,31 +50,23 @@ class LibGdxWallpaperTemplateService : AndroidLiveWallpaperService() {
       }
 
       override fun create() {
-         Log.i(TAG, "ApplicationListener: create")
 
-         batch = SpriteBatch()
-         img = Texture("badlogic.jpg")
+         scene = WallpaperScene();
       }
 
       override fun resize(width: Int, height: Int) {
-         Log.i(TAG, "ApplicationListener: resize")
       }
 
       override fun render() {
-         Log.i(TAG, "ApplicationListener: render")
-
          ScreenUtils.clear(0f, 0f, 1f, 1f)
-         batch!!.begin()
-         batch!!.draw(img, 0f, 0f)
-         batch!!.end()
+         scene!!.render()
       }
 
       override fun pause() {
-         Log.i(TAG, "ApplicationListener: pause")
       }
 
       override fun resume() {
-         Log.i(TAG, "ApplicationListener: resume")
+         scene!!.reset()
       }
 
       override fun dispose() {
