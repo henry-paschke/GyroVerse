@@ -1,3 +1,6 @@
+## GyroVerse
+Check out our "how we made it" video here: https://youtu.be/9FbDweQYBzU?si=WWOqLhXfsDLOwnL_
+
 ## Inspiration  
 - **JellyCar** inspired the development of our soft-body physics engine.  
 - Our collective childhood fascination with space shaped the theme and design.  
